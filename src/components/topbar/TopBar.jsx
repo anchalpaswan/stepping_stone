@@ -1,3 +1,4 @@
+
 import "./topbar.css"
 import navLogo from "../../images/steppingStoneNavbar.svg";
 import headerImage from "../../images/humanAtStepping.svg"
@@ -45,12 +46,16 @@ import headerLogo from "../../images/headerLogoGREY.svg";
 
 export default function TopBar() {
    
-
+    const [clicked,setClicked]=useState(false);
+    const [searchText,setSearchText]=useState({});
+    const handleClick=()=>{
+      setClicked(!clicked);
+    }
   return (
     <>
-        <div className="top">
+        {/* <div className="top">
             <div className="topLeft">
-                {/* <img src={navLogo} alt="" /> */}
+              
                  
                 <div className="stepping-stone valign-text-middle Montserrat-bold-black-20px ">
                     <span className="Montserrat-bold-black-20px"> Stepping stone</span>
@@ -60,12 +65,19 @@ export default function TopBar() {
 
 
             <div className="topCenter">
+                <div id="navbar" className={clicked ? "#navbar active" : "#navbar"}>
                 <ul className="topList">
-                    <li className="topListItem place">HOME</li>
+                    <li className="topListItem place active">HOME</li>
                     <li className="topListItem place">CHATROOM</li>
                     <li className="topListItem place">COURSE</li>
                     <li className="topListItem place">LOGIN</li>
                 </ul>
+                </div>
+                <div id="mobile">
+                <i id="bar" onClick={()=>handleClick()} className={clicked ? "fas fa-times" : "fas fa-bars"}>
+                    
+                </i>
+                </div>
             </div>
 
             <div className="topRight">
@@ -75,9 +87,55 @@ export default function TopBar() {
             alt=""
         />
             </div>
-        </div>
+        </div> */}
 
+
+        <nav>
+        <div className="topLeft">
+              <span className="Montserrat-bold-black-20px"><a href="index.html">Stepping stone</a></span>
+                
+            </div>
+
+        <div>
+          <ul id="navbar" className={clicked ? "#navbar active" : "#navbar"}>
+            <li>
+              <a href="index.html" className="active">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="index.html"> Shop </a>
+            </li>
+            <li>
+              <a href="index.html"> Blog </a>
+            </li>
+            <li>
+              <a href="index.html"> About </a>
+            </li>
+            <li>
+              <a href="index.html"> Contact </a>
+            </li>
+          </ul>
+        </div>
+        <input type="text" name="" id="" className={clicked? "input clicked":"input"} />
         
+        <img 
+            className="topImg"
+            src="https://images.pexels.com/photos/13570394/pexels-photo-13570394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+        />
+        <div id="mobile">
+          <i
+            id="bar"
+            onClick={()=>handleClick()}
+            className={clicked ? "fas fa-times" : "fas fa-bars"}
+          ></i>
+        </div>
+       
+       
+      </nav>
+
+        ==================header==============
         <header>
             <div className="container header_container">
                 <div className="header_left">
@@ -85,10 +143,9 @@ export default function TopBar() {
                         <div className="header_logo">
                                 <img src={headerLogo} alt="" />
                             </div>
-                            <h1>Stepping stone</h1>
+                            <h1 id="header_title">Stepping stone</h1>
                    </span>
-                    <p>
-                       Choose your stone of success today.....
+                    <p>Choose your stone of success today.....
                     </p>
                     <a href="courses.html" class="btn btn-primary"> Get Started </a>
                 </div>
@@ -215,17 +272,17 @@ export default function TopBar() {
 
         {/* =========footer===== */}
 
-        <footer className="footer">
+        <footer >
             <div className="container footer_container">
                 <div className="footer_1">
-                    <a href="index.html" className="footer_logo"><h4>EGATOR</h4></a>
+                    <a href="index.html" className="footer_logo"><h4>Stepping stone</h4></a>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ipsum nobis ratione.
                     </p>
                 </div>
                 <div className="footer_2">
                     <h4>Permalinks</h4>
-                    <ul className="permalinks">
+                    <ul className="permalinks light_color">
                         <li><a href="index.html"> Home </a></li>
                         <li><a href="about.html"> About </a></li>
                         <li><a href="courses.html"> Courses </a></li>
@@ -263,12 +320,12 @@ export default function TopBar() {
                     </li>
                 </ul>
 
+            <div className="footer_copyright">
+                <small>Copyright &copy; Stepping stone</small>
+            </div>
                 
             </div>
 
-            <div className="footer_copyright">
-                <small>Copyright &</small>
-            </div>
         </footer>
          
     </>
@@ -305,3 +362,4 @@ export default function TopBar() {
 //     };
 // }
  
+
