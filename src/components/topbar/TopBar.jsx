@@ -104,16 +104,16 @@ export default function TopBar() {
               </a>
             </li>
             <li>
-              <a href="index.html"> Shop </a>
+              <a href="index.html"> Chatroom </a>
             </li>
             <li>
-              <a href="index.html"> Blog </a>
+              <a href="index.html"> Course </a>
             </li>
             <li>
-              <a href="index.html"> About </a>
+              <a href="index.html"> Logout </a>
             </li>
             <li>
-              <a href="index.html"> Contact </a>
+              {/* <a href="index.html"> Contact </a> */}
             </li>
           </ul>
         </div>
@@ -135,15 +135,15 @@ export default function TopBar() {
        
       </nav>
 
-        ==================header==============
+        {/* ==================header============== */}
         <header>
             <div className="container header_container">
                 <div className="header_left">
                    <span className="header_left_logo">
                         <div className="header_logo">
                                 <img src={headerLogo} alt="" />
-                            </div>
                             <h1 id="header_title">Stepping stone</h1>
+                            </div>
                    </span>
                     <p>Choose your stone of success today.....
                     </p>
